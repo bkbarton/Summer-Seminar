@@ -72,6 +72,11 @@ public class Inventory : MonoBehaviour {
 					if(slotRect.Contains(currentEvent.mousePosition)){
 						tooltip = CreateTooltip (slots[i]);
 						showToolTip = true;
+						if(Input.GetButtonDown("Delete")){
+							draggedItem = null;
+							draggingItem = false;
+							inventory[i] = new Item();
+						}
 						//Need to check if left clicked on item, then if mouse has been dragged
 						if(currentEvent.button == 0 && currentEvent.type == EventType.mouseDrag && !draggingItem){
 							//we are dragging an item
@@ -100,7 +105,8 @@ public class Inventory : MonoBehaviour {
 							draggedItem = null;
 						}
 					}
-				}
+				 }
+
 				if(tooltip == ""){
 					showToolTip = false;
 				}

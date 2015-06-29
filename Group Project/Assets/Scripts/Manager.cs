@@ -43,7 +43,7 @@ public class Manager : MonoBehaviour {
 	void Update(){
 		if (mode == GameMode.playing && Down_Floor.floorNext) {
 			mode = GameMode.levelEnd;
-			Invoke ("NextLevel", 2f);
+			Invoke ("NextLevel", .5f);
 		}
 	}
 

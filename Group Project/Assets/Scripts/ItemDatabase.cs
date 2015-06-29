@@ -7,10 +7,22 @@ public class ItemDatabase : MonoBehaviour {
 
 	void Awake(){
 		//just random items put in database on awake
-		items.Add (new Item ("Amulet", 2, "Very Strange", 2, 0, Item.ItemType.Armour));
-		items.Add (new Item ("White Shirt", 5, "Just an old white shirt", 2, 0, Item.ItemType.Armour));
-		items.Add (new Item ("Potion", 1, "Use this to restore 5 health", 2, 0, Item.ItemType.Consumable));
-		items.Add (new Item ("Flamberge",3, "This sword makes you a beast", 10, 0, Item.ItemType.Weapon));
-		items.Add (new Item ("Magic Hat", 4, "Zappy-ZAP", 2, 0, Item.ItemType.Armour));
+		items.Add (new Item ("Amulet", 1, "Very Strange", 2, 0, Item.ItemType.Armour));
+		items.Add (new Item ("Axe", 2, "This is a sturdy axe", 2, 0, Item.ItemType.Weapon));
+		items.Add (new Item ("Bow", 3, "Fine bow", 2, 0, Item.ItemType.Weapon));
+		items.Add (new Item ("Flamberge",4, "This sword makes you a beast", 10, 0, Item.ItemType.Weapon));
+		items.Add (new Item ("Heavy Bow", 5, "This is a strong ancient bow", 2, 0, Item.ItemType.Weapon));
+		items.Add (new Item ("Ice Sword", 6, "Chilly", 2, 0, Item.ItemType.Weapon));
+		items.Add (new Item ("Light Armour", 7, "This weighs nothing", 2, 0, Item.ItemType.Armour));
+		items.Add (new Item ("Magic Hat", 8, "I feel smarter already", 2, 0, Item.ItemType.Armour));
+		items.Add (new Item ("Majestic Armour", 9, "Best armour NA", 2, 0, Item.ItemType.Armour));
+		items.Add (new Item ("Potion", 10, "This will heal ", 2, 0, Item.ItemType.Consumable));
+		items.Add (new Item ("Red Armour", 11, "I like red", 2, 0, Item.ItemType.Armour));
+		items.Add (new Item ("Silver Armour", 12, "Very sturdy armour", 2, 0, Item.ItemType.Armour));
+		items.Add (new Item ("Snaga", 13, "This axehas history ", 2, 0, Item.ItemType.Weapon));
+		items.Add (new Item ("Strong Sword", 14, "A well crafted sword", 2, 0, Item.ItemType.Weapon));
+		items.Add (new Item ("Sword", 15, "I can see the rust ", 2, 0, Item.ItemType.Weapon));
+		items.Add (new Item ("Thunder Sword", 16, "Zappy Zap", 2, 0, Item.ItemType.Weapon));
+		items.Add (new Item ("White Shirt", 17, "A nice shirt!", 2, 0, Item.ItemType.Armour));
 	}
 }

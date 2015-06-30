@@ -204,7 +204,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: .100000001
-  canRunIntoEnemy: 1
   enemyChance: 10
 --- !u!1 &408798428
 GameObject:

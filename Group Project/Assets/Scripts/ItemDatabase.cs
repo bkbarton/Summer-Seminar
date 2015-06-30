@@ -8,7 +8,7 @@ public class ItemDatabase : MonoBehaviour {
 	void Awake(){
 		//just random items put in database on awake
 		items.Add (new Item ("Amulet", 1, "Very Strange", 2, 0, Item.ItemType.Armour));
-		items.Add (new Item ("Axe", 2, "This is a sturdy axe", 2, 0, Item.ItemType.Weapon));
+		items.Add (new Item ("Axe", 10, "This is a sturdy axe", 2, 0, Item.ItemType.Weapon));
 		items.Add (new Item ("Bow", 3, "Fine bow", 2, 0, Item.ItemType.Weapon));
 		items.Add (new Item ("Flamberge",4, "This sword makes you a beast", 10, 0, Item.ItemType.Weapon));
 		items.Add (new Item ("Heavy Bow", 5, "This is a strong ancient bow", 2, 0, Item.ItemType.Weapon));
@@ -16,7 +16,7 @@ public class ItemDatabase : MonoBehaviour {
 		items.Add (new Item ("Light Armour", 7, "This weighs nothing", 2, 0, Item.ItemType.Armour));
 		items.Add (new Item ("Magic Hat", 8, "I feel smarter already", 2, 0, Item.ItemType.Armour));
 		items.Add (new Item ("Majestic Armour", 9, "Best armour NA", 2, 0, Item.ItemType.Armour));
-		items.Add (new Item ("Potion", 10, "This will heal ", 2, 0, Item.ItemType.Consumable));
+		items.Add (new Item ("Potion", 2, "This will heal ", 2, 0, Item.ItemType.Consumable));
 		items.Add (new Item ("Red Armour", 11, "I like red", 2, 0, Item.ItemType.Armour));
 		items.Add (new Item ("Silver Armour", 12, "Very sturdy armour", 2, 0, Item.ItemType.Armour));
 		items.Add (new Item ("Snaga", 13, "This axehas history ", 2, 0, Item.ItemType.Weapon));

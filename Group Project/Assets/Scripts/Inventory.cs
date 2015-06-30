@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-public class Inventory : MonoBehaviour {
+public  class Inventory : MonoBehaviour {
 	//variables
 	public GUISkin 		skin;
 	public int 			slotsX, slotsY;
@@ -25,10 +25,7 @@ public class Inventory : MonoBehaviour {
 		//Can add items here to start off with them 
 		database = GameObject.FindGameObjectWithTag ("Item Database").GetComponent<ItemDatabase> ();
 		AddItem (1);
-		AddItem (2);
-		AddItem (3);
-		AddItem (4);
-		AddItem (5);
+
 	}
 	void Update(){
 		//If "i" is pressed, inventory will pop up 
@@ -121,7 +118,7 @@ public class Inventory : MonoBehaviour {
 		return tooltip;
 	}
 	//Will add an item based on ID 
-	void AddItem(int id){
+	public void AddItem(int id){
 		for (int i = 0; i < inventory.Count; i++) {
 			if(inventory[i].itemName == null){
 				for(int j = 0; j < database.items.Count; j++){
@@ -154,4 +151,6 @@ public class Inventory : MonoBehaviour {
 		}
 		return result; 
 	}
+
+
 }

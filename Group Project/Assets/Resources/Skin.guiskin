@@ -1195,7 +1195,7 @@ MonoBehaviour:
   m_CustomStyles:
   - m_Name: Slot
     m_Normal:
-      m_Background: {fileID: 10904, guid: 0000000000000000f000000000000000, type: 0}
+      m_Background: {fileID: 2800000, guid: 8e7a86ef1892bf842b0cb11d0857047d, type: 3}
       m_TextColor: {r: 0, g: 0, b: 0, a: 1}
     m_Hover:
       m_Background: {fileID: 0}

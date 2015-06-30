@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Camera_Movement : MonoBehaviour {
-	public float smooth = 1.5f;         // The relative speed at which the camera will catch up.
+	public float smooth = 18f;         // The relative speed at which the camera will catch up.
 	
 	
 	private Transform player;           // Reference to the player's transform.

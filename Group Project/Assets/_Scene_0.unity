@@ -157,9 +157,10 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 108213974}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -9, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 991983254}
   m_Father: {fileID: 0}
   m_RootOrder: 1
 --- !u!50 &108213978
@@ -214,7 +215,7 @@ GameObject:
   - 114: {fileID: 991983255}
   m_Layer: 0
   m_Name: Inventory
-  m_TagString: Untagged
+  m_TagString: Inventory
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -226,11 +227,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 991983253}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 9, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 108213977}
+  m_RootOrder: 0
 --- !u!114 &991983255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,7 +275,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!114 &1338609630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,7 +350,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -386,8 +387,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floors:
-  - {fileID: 197952, guid: 239cf500ebf16044b9095011469fd0df, type: 2}
-  - {fileID: 126958, guid: 6c9b83bbab38a3c498125f7044fab3f6, type: 2}
+  - {fileID: 126458, guid: f5bff5ed52deb4445b8a5613d5904b03, type: 2}
+  - {fileID: 179200, guid: 9e9786e40e5b9fd4cbc179d1a8e1cf3e, type: 2}
   floorPos: {x: 0, y: 0, z: 0}
   ___________: 0
   level: 0
@@ -405,4 +406,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cffdb1974e0ecd4bad5809c3ea8d1fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smooth: 5
+  smooth: 25

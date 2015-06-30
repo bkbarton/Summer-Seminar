@@ -10,6 +10,8 @@ public class Item {
 	public Texture2D	itemIcon;
 	public int			itemPower;
 	public int			itemSpeed;
+	public int			itemInt;
+	public int			itemDef;
 	public ItemType		itemType;
 
 	public enum ItemType{

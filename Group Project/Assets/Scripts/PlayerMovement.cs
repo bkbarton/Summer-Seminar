@@ -69,7 +69,7 @@ public class PlayerMovement : MonoBehaviour {
 	}
 	
 	bool valid(Vector2 dir){
-		//??? not working right
+		//Raycast checks for colliders. 
 		Vector2 pos = transform.position;
 		RaycastHit2D hit = Physics2D.Linecast(pos + dir, pos);
 		return (hit.collider == GetComponent<Collider2D>()) ;

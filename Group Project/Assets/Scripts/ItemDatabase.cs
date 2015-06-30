@@ -6,6 +6,7 @@ public class ItemDatabase : MonoBehaviour {
 	public List<Item> items = new List<Item> ();
 
 	void Awake(){
+		//(Name, ID(nothing can be 0), Description, Power, Speed, Intelligence?, Defence, Item type(Weapon, Consumable, or Armour) 
 		//just random items put in database on awake
 		items.Add (new Item ("Amulet", 1, "Very Strange", 2, 0, Item.ItemType.Armour));
 		items.Add (new Item ("Axe", 10, "This is a sturdy axe", 2, 0, Item.ItemType.Weapon));

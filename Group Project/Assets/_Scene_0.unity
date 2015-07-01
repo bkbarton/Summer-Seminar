@@ -101,6 +101,7 @@ GameObject:
   - 50: {fileID: 108213978}
   - 114: {fileID: 108213980}
   - 114: {fileID: 108213981}
+  - 114: {fileID: 108213982}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -218,6 +219,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   optionsMenu: {fileID: 1395418796}
+--- !u!114 &108213982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 108213974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eb420a9edf231e41a0d7fda865da702, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &408798428
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,6 +409,7 @@ MonoBehaviour:
   slotsX: 4
   slotsY: 4
   inventory: []
+  equipment: []
   slots: []
 --- !u!1 &1338609628
 GameObject:

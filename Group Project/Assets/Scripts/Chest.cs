@@ -14,5 +14,6 @@ public class Chest : MonoBehaviour {
 				inv.AddItem(item);  }
 		  }
 		Destroy (this.gameObject);
+
 	}
 }

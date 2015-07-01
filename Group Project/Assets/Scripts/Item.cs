@@ -9,7 +9,6 @@ public class Item {
 	public string		itemDesc;
 	public Texture2D	itemIcon;
 	public int			itemPower;
-	public int			itemSpeed;
 	public int			itemInt;
 	public int			itemDef;
 	public ItemType		itemType;
@@ -20,13 +19,14 @@ public class Item {
 		Consumable
 	}
 
-	public Item(string name, int id, string desc, int power, int speed, ItemType type ){
+	public Item(string name, int id, string desc, int power, int Int,int def,  ItemType type ){
 		itemName = name;
 		itemID = id;
 		itemDesc = desc;
 		itemIcon = Resources.Load<Texture2D>(name);
 		itemPower = power;
-		itemSpeed = speed;
+		itemInt = Int;
+		itemDef = def;
 		itemType = type;
 	}
 	public Item(){

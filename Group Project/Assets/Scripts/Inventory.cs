@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 public  class Inventory : MonoBehaviour {
@@ -6,6 +7,7 @@ public  class Inventory : MonoBehaviour {
 	public GUISkin 		skin;
 	public int 			slotsX, slotsY;
 	public List<Item> 	 inventory = new List<Item>();
+	public List<Item>	 equipment = new List<Item> ();
 	public List<Item>	 slots = new List<Item> ();
 	private bool	 	showInventory;
 	private bool		showToolTip;
@@ -22,10 +24,14 @@ public  class Inventory : MonoBehaviour {
 			slots.Add (new Item());
 			inventory.Add (new Item());
 		}
+		equipment.Add (new Item ()); //weapon
+		equipment.Add (new Item ()); //armour
 		//Can add items here to start off with them 
 		database = GameObject.FindGameObjectWithTag ("Item Database").GetComponent<ItemDatabase> ();
 		AddItem (1);
-
+		AddItem (2);
+		AddItem (3);
+		AddItem (10);
 	}
 	void Update(){
 		//If "i" is pressed, inventory will pop up 
@@ -74,6 +80,13 @@ public  class Inventory : MonoBehaviour {
 							draggingItem = false;
 							inventory[i] = new Item();
 						}
+						//*******************************************************************************//
+						if(currentEvent.button == 1){
+							if(currentEvent.type == EventType.mouseUp ){
+							Equip (i);
+							}
+						}
+
 						//Need to check if left clicked on item, then if mouse has been dragged
 						if(currentEvent.button == 0 && currentEvent.type == EventType.mouseDrag && !draggingItem){
 							//we are dragging an item
@@ -152,5 +165,19 @@ public  class Inventory : MonoBehaviour {
 		return result; 
 	}
 
+	void Equip(int index){
+		//three cases, one for consumable, one for weapon, and one for armour
+		Item temp = inventory[index];
+		if (temp.itemType == Item.ItemType.Weapon) {
+				inventory[index] = equipment[0];
+				equipment[0] = temp;
+		} else if (temp.itemType == Item.ItemType.Armour) {
+			inventory[index] = equipment[1];
+			equipment[1] = temp;
+		} else {
+			print ("potion");
+		}
+		print ("equipped");
+	}
 
 }

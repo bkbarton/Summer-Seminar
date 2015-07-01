@@ -558,6 +558,8 @@ MonoBehaviour:
   floors:
   - {fileID: 126458, guid: f5bff5ed52deb4445b8a5613d5904b03, type: 2}
   - {fileID: 179200, guid: 9e9786e40e5b9fd4cbc179d1a8e1cf3e, type: 2}
+  - {fileID: 199112, guid: 0597a53130f56c940b79dac381c60a3d, type: 2}
+  - {fileID: 148162, guid: 4172e9dd6cf5bba44afc96c6991252cc, type: 2}
   floorPos: {x: 0, y: 0, z: 0}
   ___________: 0
   level: 0

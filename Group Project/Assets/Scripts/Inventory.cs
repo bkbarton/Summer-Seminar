@@ -29,9 +29,7 @@ public  class Inventory : MonoBehaviour {
 		//Can add items here to start off with them 
 		database = GameObject.FindGameObjectWithTag ("Item Database").GetComponent<ItemDatabase> ();
 		AddItem (1);
-		AddItem (2);
-		AddItem (3);
-		AddItem (10);
+	
 	}
 	void Update(){
 		//If "i" is pressed, inventory will pop up 

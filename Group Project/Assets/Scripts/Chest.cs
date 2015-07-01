@@ -9,7 +9,7 @@ public class Chest : MonoBehaviour {
 		inv.AddItem (2);
 		int r = Random.Range(2, 4);
 		for (int i = 0; i < r; i++) {
-			int item = Random.Range (3, 16);
+			int item = Random.Range (3, 15);
 			   if(inv){
 				inv.AddItem(item);  }
 		  }

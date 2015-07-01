@@ -38,6 +38,13 @@ public  class Inventory : MonoBehaviour {
 		if(Input.GetButtonDown ("Inventory")){
 			showInventory = !showInventory;
 		}
+		if (Input.GetButtonDown ("Character")) {
+			List<int> temp = EquipStats();
+			for(int i = 0; i < 3; i++)
+			{
+				print(((int)temp[i]).ToString());
+			}
+		}
 	}
 	//Responsible for showing the GUI
 	void OnGUI(){
@@ -180,4 +187,25 @@ public  class Inventory : MonoBehaviour {
 		print ("equipped");
 	}
 
+	List<int> EquipStats(){
+		List<int> stats = new List<int>(); 
+		stats.Add (0);
+		stats.Add (0);
+		stats.Add (0);
+		//will be added in order; str, int, def.
+		if ((equipment [0] != null && equipment [1] != null)) {
+			stats [0] = equipment [0].itemPower + equipment [1].itemPower;
+			stats [1] = equipment [0].itemInt + equipment [1].itemInt;
+			stats [2] = equipment [0].itemDef + equipment [1].itemDef;
+		} else if (equipment [1] != null) {
+			stats [0] = equipment [1].itemPower;
+			stats [1] = equipment [1].itemInt;
+			stats [2] = equipment [1].itemDef;
+		} else if (equipment [0] != null) {
+			stats [0] = equipment [0].itemPower;
+			stats [1] = equipment [0].itemInt;
+			stats [2] = equipment [0].itemDef;
+		} 
+		return stats;
+	}
 }

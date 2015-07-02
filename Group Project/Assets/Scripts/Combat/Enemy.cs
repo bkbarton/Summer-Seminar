@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour {
     public int armor = 1;
     public int exp = 20;
     public int gold = 5;
+    public int weaponDmg = 3;
 
     void Awake()
     {
@@ -28,6 +29,12 @@ public class Enemy : MonoBehaviour {
             print(PlayerChoice.S.damageDealt);
             health = health - PlayerChoice.S.damageDealt;
             PlayerChoice.S.hit = false;
+        }
+        if (TurnBasedCombat.S.currentState == CombatStates.ENEMY)
+        {
+            print(weaponDmg);
+            PlayerChoice.S.health -= weaponDmg;
+            TurnBasedCombat.S.currentState = CombatStates.PLAYER;
         }
 	}
 

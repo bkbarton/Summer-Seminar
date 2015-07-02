@@ -24,5 +24,6 @@ public class PlayerChoice : MonoBehaviour {
         damageDealt = weaponDmg;
         hit = true;
         print("attack!");
+        TurnBasedCombat.S.currentState = CombatStates.ENEMY;
     }
 }

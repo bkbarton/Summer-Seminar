@@ -23,6 +23,7 @@ public class TurnBasedCombat : MonoBehaviour {
     public Camera cam1; //MainCamera
     public Camera cam2; //CombatCamera
     public GameObject[] prefabEnemies; //collection of all the enemies to draw from
+    public GameObject currentEnemy;
 
 	// Use this for initialization
 	void Start () {
@@ -60,12 +61,11 @@ public class TurnBasedCombat : MonoBehaviour {
                 //player's turn
                 if (PlayerChoice.S.health <= 0)
                 {
-                    currentState = CombatStates.LOSE;
+                    currentState = CombatStates.LOSE; // if the player runs out of the health, it boots them to the lose situation. Which currently does nothing but sounds ominious
                 }
                 break;
             case(CombatStates.ENEMY):
                 //enemy's turn
-                
                 break;
             case(CombatStates.WIN):
                 //winning condition
@@ -73,14 +73,14 @@ public class TurnBasedCombat : MonoBehaviour {
                 cam2.enabled = false;
                 CombatUI.S.isShowing = false;
                 CombatUI.S.showUI();
-                //GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = true;
+                //GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = true; disabled due to bugs
                 break;
             case(CombatStates.RUN):
                 //Player flees from combat
-                //GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = false;
+                //GameObject.Find("Player").GetComponent<PlayerMovement>().enabled = false; disabled due to bugs
                 break;
             case(CombatStates.LOSE):
-                //losing condition
+                //losing condition, currently does nothing
                 break;
         }
 	}
@@ -94,8 +94,8 @@ public class TurnBasedCombat : MonoBehaviour {
     void Spawn()
     {
         int index = Random.Range(0, prefabEnemies.Length);
-        GameObject go = Instantiate(prefabEnemies[index] as GameObject);
-        go.transform.Translate(GameObject.Find("EnemySpawner").transform.position);
+        GameObject currentEnemy = Instantiate(prefabEnemies[index] as GameObject);
+        currentEnemy.transform.Translate(GameObject.Find("EnemySpawner").transform.position);
     }
 
 }

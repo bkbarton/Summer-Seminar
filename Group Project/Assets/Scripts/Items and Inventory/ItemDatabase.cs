@@ -6,24 +6,24 @@ public class ItemDatabase : MonoBehaviour {
 	public List<Item> items = new List<Item> ();
 
 	void Awake(){
-		//(Name, ID(nothing can be 0), Description, Power, Speed, Intelligence?, Defence, Item type(Weapon, Consumable, or Armour) 
+							//(Name, ID(nothing can be 0), Description, Power, Intelligence, Defence, Item type(Weapon, Consumable, or Armour) 
 		//just random items put in database on awake
-		items.Add (new Item ("Amulet", 1, "Very Strange", 2, 0, Item.ItemType.Armour));
-		items.Add (new Item ("Axe", 10, "This is a sturdy axe", 2, 0, Item.ItemType.Weapon));
-		items.Add (new Item ("Bow", 3, "Fine bow", 2, 0, Item.ItemType.Weapon));
-		items.Add (new Item ("Flamberge",4, "This sword makes you a beast", 10, 0, Item.ItemType.Weapon));
-		items.Add (new Item ("Heavy Bow", 5, "This is a strong ancient bow", 2, 0, Item.ItemType.Weapon));
-		items.Add (new Item ("Ice Sword", 6, "Chilly", 2, 0, Item.ItemType.Weapon));
-		items.Add (new Item ("Light Armour", 7, "This weighs nothing", 2, 0, Item.ItemType.Armour));
-		items.Add (new Item ("Magic Hat", 8, "I feel smarter already", 2, 0, Item.ItemType.Armour));
-		items.Add (new Item ("Majestic Armour", 9, "Best armour NA", 2, 0, Item.ItemType.Armour));
-		items.Add (new Item ("Potion", 2, "This will heal ", 2, 0, Item.ItemType.Consumable));
-		items.Add (new Item ("Red Armour", 11, "I like red", 2, 0, Item.ItemType.Armour));
-		items.Add (new Item ("Silver Armour", 12, "Very sturdy armour", 2, 0, Item.ItemType.Armour));
-		items.Add (new Item ("Snaga", 13, "This axehas history ", 2, 0, Item.ItemType.Weapon));
-		items.Add (new Item ("Strong Sword", 14, "A well crafted sword", 2, 0, Item.ItemType.Weapon));
-		items.Add (new Item ("Sword", 15, "I can see the rust ", 2, 0, Item.ItemType.Weapon));
-		items.Add (new Item ("Thunder Sword", 16, "Zappy Zap", 2, 0, Item.ItemType.Weapon));
-		items.Add (new Item ("White Shirt", 17, "A nice shirt!", 2, 0, Item.ItemType.Armour));
+		items.Add (new Item ("Amulet", 1, "Very Strange", 2, 0,1, Item.ItemType.Armour));
+		items.Add (new Item ("Potion", 2, "This will heal ", 2, 0,1, Item.ItemType.Consumable));
+		items.Add (new Item ("Axe", 3, "This is a sturdy axe", 2, 0,0, Item.ItemType.Weapon));
+		items.Add (new Item ("Bow", 4, "Fine bow", 1, 1,1, Item.ItemType.Weapon));
+		items.Add (new Item ("Flamberge", 5, "This sword makes you a beast", 10, 3,0, Item.ItemType.Weapon));
+		items.Add (new Item ("Heavy Bow", 6, "This is a strong ancient bow", 5, 5,3, Item.ItemType.Weapon));
+		items.Add (new Item ("Ice Sword", 7, "Chilly", 2, 10,0, Item.ItemType.Weapon));
+		items.Add (new Item ("Light Armour", 8, "This weighs nothing", 0, 2,3, Item.ItemType.Armour));
+		items.Add (new Item ("Majestic Armour", 9, "Best armour NA", 0, 10,10, Item.ItemType.Armour));
+		items.Add (new Item ("Red Armour", 10, "I like red", 5, 5,5, Item.ItemType.Armour));
+		items.Add (new Item ("Silver Armour", 11, "Very sturdy armour", 0, 0,7, Item.ItemType.Armour));
+		items.Add (new Item ("Snaga", 12, "This axehas history ", 15, 0,0, Item.ItemType.Weapon));
+		items.Add (new Item ("Strong Sword", 13, "A well crafted sword", 9, 0,0, Item.ItemType.Weapon));
+		items.Add (new Item ("Sword", 14, "I can see the rust ", 3, 0,0, Item.ItemType.Weapon));
+		items.Add (new Item ("Thunder Sword", 15, "Zappy Zap", 5, 5,10, Item.ItemType.Weapon));
+		items.Add (new Item ("White Shirt", 16, "A nice shirt!", 2, 0,1, Item.ItemType.Armour));
+		items.Add (new Item ("Magic Hat", 17, "I feel smarter already", 2, 10,1, Item.ItemType.Armour));//might delete
 	}
 }

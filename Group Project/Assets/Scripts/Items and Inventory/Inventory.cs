@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 public  class Inventory : MonoBehaviour {
@@ -6,6 +7,7 @@ public  class Inventory : MonoBehaviour {
 	public GUISkin 		skin;
 	public int 			slotsX, slotsY;
 	public List<Item> 	 inventory = new List<Item>();
+	public List<Item>	 equipment = new List<Item> ();
 	public List<Item>	 slots = new List<Item> ();
 	private bool	 	showInventory;
 	private bool		showToolTip;
@@ -22,15 +24,24 @@ public  class Inventory : MonoBehaviour {
 			slots.Add (new Item());
 			inventory.Add (new Item());
 		}
+		equipment.Add (new Item ()); //weapon
+		equipment.Add (new Item ()); //armour
 		//Can add items here to start off with them 
 		database = GameObject.FindGameObjectWithTag ("Item Database").GetComponent<ItemDatabase> ();
 		AddItem (1);
-
+	
 	}
 	void Update(){
 		//If "i" is pressed, inventory will pop up 
 		if(Input.GetButtonDown ("Inventory")){
 			showInventory = !showInventory;
+		}
+		if (Input.GetButtonDown ("Character")) {
+			List<int> temp = EquipStats();
+			for(int i = 0; i < 3; i++)
+			{
+				print(((int)temp[i]).ToString());
+			}
 		}
 	}
 	//Responsible for showing the GUI
@@ -74,6 +85,13 @@ public  class Inventory : MonoBehaviour {
 							draggingItem = false;
 							inventory[i] = new Item();
 						}
+						//*******************************************************************************//
+						if(currentEvent.button == 1){
+							if(currentEvent.type == EventType.mouseUp ){
+							Equip (i);
+							}
+						}
+
 						//Need to check if left clicked on item, then if mouse has been dragged
 						if(currentEvent.button == 0 && currentEvent.type == EventType.mouseDrag && !draggingItem){
 							//we are dragging an item
@@ -152,5 +170,40 @@ public  class Inventory : MonoBehaviour {
 		return result; 
 	}
 
+	void Equip(int index){
+		//three cases, one for consumable, one for weapon, and one for armour
+		Item temp = inventory[index];
+		if (temp.itemType == Item.ItemType.Weapon) {
+				inventory[index] = equipment[0];
+				equipment[0] = temp;
+		} else if (temp.itemType == Item.ItemType.Armour) {
+			inventory[index] = equipment[1];
+			equipment[1] = temp;
+		} else {
+			print ("potion");
+		}
+		print ("equipped");
+	}
 
+	List<int> EquipStats(){
+		List<int> stats = new List<int>(); 
+		stats.Add (0);
+		stats.Add (0);
+		stats.Add (0);
+		//will be added in order; str, int, def.
+		if ((equipment [0] != null && equipment [1] != null)) {
+			stats [0] = equipment [0].itemPower + equipment [1].itemPower;
+			stats [1] = equipment [0].itemInt + equipment [1].itemInt;
+			stats [2] = equipment [0].itemDef + equipment [1].itemDef;
+		} else if (equipment [1] != null) {
+			stats [0] = equipment [1].itemPower;
+			stats [1] = equipment [1].itemInt;
+			stats [2] = equipment [1].itemDef;
+		} else if (equipment [0] != null) {
+			stats [0] = equipment [0].itemPower;
+			stats [1] = equipment [0].itemInt;
+			stats [2] = equipment [0].itemDef;
+		} 
+		return stats;
+	}
 }

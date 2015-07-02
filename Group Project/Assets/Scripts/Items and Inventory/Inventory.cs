@@ -10,6 +10,7 @@ public  class Inventory : MonoBehaviour {
 	public List<Item>	 equipment = new List<Item> ();
 	public List<Item>	 slots = new List<Item> ();
 	private bool	 	showInventory;
+	private bool		showEquip;
 	private bool		showToolTip;
 	private string 		tooltip;
 	private ItemDatabase database; 
@@ -29,6 +30,8 @@ public  class Inventory : MonoBehaviour {
 		//Can add items here to start off with them 
 		database = GameObject.FindGameObjectWithTag ("Item Database").GetComponent<ItemDatabase> ();
 		AddItem (1);
+		AddItem (3);
+		AddItem (10);
 	
 	}
 	void Update(){
@@ -37,12 +40,9 @@ public  class Inventory : MonoBehaviour {
 			showInventory = !showInventory;
 		}
 		if (Input.GetButtonDown ("Character")) {
-			List<int> temp = EquipStats();
-			for(int i = 0; i < 3; i++)
-			{
-				print(((int)temp[i]).ToString());
-			}
+			showEquip  = !showEquip;
 		}
+	
 	}
 	//Responsible for showing the GUI
 	void OnGUI(){
@@ -58,6 +58,14 @@ public  class Inventory : MonoBehaviour {
 		if (draggingItem) {
 			//will show item icon while dragging
 			GUI.DrawTexture(new Rect(Event.current.mousePosition.x, Event.current.mousePosition.y, 25, 25), draggedItem.itemIcon);
+		}
+
+		if (showEquip) {
+			Rect slotRect = new Rect(200, 30, 80, 25);
+			int str = (EquipStats())[0];
+			int defence = (EquipStats())[1];
+			GUI.Box ((slotRect), "Weapon: " + str);
+			GUI.Box ((new Rect(200, 60, 80, 25)), "Defence: " + defence);
 		}
 	
 		
@@ -185,7 +193,7 @@ public  class Inventory : MonoBehaviour {
 		print ("equipped");
 	}
 
-	List<int> EquipStats(){
+	public List<int> EquipStats(){
 		List<int> stats = new List<int>(); 
 		stats.Add (0);
 		stats.Add (0);

@@ -59,7 +59,7 @@ public class TurnBasedCombat : MonoBehaviour {
                 break;
             case(CombatStates.PLAYER):
                 //player's turn
-                if (PlayerChoice.S.health <= 0)
+                if (PlayerChoice.S.currHealth <= 0)
                 {
                     currentState = CombatStates.LOSE; // if the player runs out of the health, it boots them to the lose situation. Which currently does nothing but sounds ominious
                 }

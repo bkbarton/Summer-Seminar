@@ -30,9 +30,8 @@ public  class Inventory : MonoBehaviour {
 		//Can add items here to start off with them 
 		database = GameObject.FindGameObjectWithTag ("Item Database").GetComponent<ItemDatabase> ();
 		AddItem (1);
-		AddItem (3);
-		AddItem (10);
-	
+		AddItem (2);
+		AddItem (2);
 	}
 	void Update(){
 		//If "i" is pressed, inventory will pop up 
@@ -61,11 +60,16 @@ public  class Inventory : MonoBehaviour {
 		}
 
 		if (showEquip) {
-			Rect slotRect = new Rect(200, 30, 80, 25);
+			Rect slotRect = new Rect(200, 40, 80, 25);
 			int str = (EquipStats())[0];
 			int defence = (EquipStats())[1];
+			int max = PlayerChoice.S.Maxhealth;
+			int h = PlayerChoice.S.currHealth;
+			GUI.Box ((new Rect(200, 0,120,25)), "Max Health: " + max);
+			GUI.Box ((new Rect(200, 20,120,25)), "Current Health: " + h);
 			GUI.Box ((slotRect), "Weapon: " + str);
 			GUI.Box ((new Rect(200, 60, 80, 25)), "Defence: " + defence);
+
 		}
 	
 		
@@ -180,6 +184,7 @@ public  class Inventory : MonoBehaviour {
 
 	void Equip(int index){
 		//three cases, one for consumable, one for weapon, and one for armour
+
 		Item temp = inventory[index];
 		if (temp.itemType == Item.ItemType.Weapon) {
 				inventory[index] = equipment[0];
@@ -188,7 +193,16 @@ public  class Inventory : MonoBehaviour {
 			inventory[index] = equipment[1];
 			equipment[1] = temp;
 		} else {
-			print ("potion");
+			int max = PlayerChoice.S.Maxhealth;
+			int curr = PlayerChoice.S.currHealth;
+			if(max != curr){
+				if(max <= (curr + 20)){
+					PlayerChoice.S.currHealth = PlayerChoice.S.Maxhealth;
+				}else{
+						PlayerChoice.S.currHealth += 20;
+				}
+				inventory[index] = new Item();
+			}
 		}
 		print ("equipped");
 	}

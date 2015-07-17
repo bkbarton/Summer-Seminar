@@ -30,6 +30,6 @@ public class HealthBar : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        barDisplay = PlayerChoice.S.health;
+        barDisplay = PlayerChoice.S.currHealth;
 	}
 }

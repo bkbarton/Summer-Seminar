@@ -32,8 +32,10 @@ public class Enemy : MonoBehaviour {
         }
         if (TurnBasedCombat.S.currentState == CombatStates.ENEMY)
         {
+			int r = Random.Range(weaponDmg,weaponDmg + 2);
+			r -= PlayerChoice.S.defence;
             print(weaponDmg);
-            PlayerChoice.S.health -= weaponDmg;
+            PlayerChoice.S.currHealth -= r;
             TurnBasedCombat.S.currentState = CombatStates.PLAYER;
         }
 	}

@@ -5,13 +5,15 @@ public class PlayerChoice : MonoBehaviour {
     public static PlayerChoice S; //singleton
 	public Inventory inv;
     public int weaponDmg = 5; //amount of damage the current weapon deals
-    public int health = 30; //ammount of damage the player can take before losing
+    public int Maxhealth = 50; //ammount of damage the player can take before losing
+	public int defence = 1;
     public int damageDealt = 0; //amount of damage the player's attack is about to deal
+	public int currHealth = 50;
     public bool hit = false;
 	private int att;
 	private int def;
 	private int batt = 5;
-	private int bHealth = 30;
+	private int prevDef = 1;
 	// Use this for initialization
 	void Start () {
         S = this;
@@ -24,9 +26,9 @@ public class PlayerChoice : MonoBehaviour {
 		if(batt != (weaponDmg - att)){
 			weaponDmg += att;
 		}
-		 def = (inv.EquipStats ()) [2];
-		if(bHealth != (health - def)){
-	    	 health += def;
+		if(prevDef != (inv.EquipStats())[2]){
+			prevDef = def;
+			def = (inv.EquipStats())[2];
 		}
 	}
 

@@ -537,9 +537,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'OPTIONS
-
-'
+  m_Text: CONTROLS
 --- !u!222 &962709041
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -875,7 +873,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: '"Game Name"
+  m_Text: 'Space Waffles
 
 '
 --- !u!222 &1576490502
@@ -900,8 +898,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: 1}
   m_AnchorMax: {x: .5, y: 1}
-  m_AnchoredPosition: {x: 20, y: -85.8999939}
-  m_SizeDelta: {x: 160, y: 29}
+  m_AnchoredPosition: {x: 62, y: -79}
+  m_SizeDelta: {x: 244, y: 44}
   m_Pivot: {x: .5, y: .5}
 --- !u!1 &1603596612
 GameObject:
